@@ -1,4 +1,5 @@
-const materials = ['Data Representation & Quering'];
+const part1=(myvalue)=>{
+    console.log("Data Repasentation and Quaring");
 
-console.log(materials.map((material) => material.length));
-// Expected output: Array [8, 6, 7, 9]
+}
+part1();

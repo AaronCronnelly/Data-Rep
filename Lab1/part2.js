@@ -1,3 +1,4 @@
+
 const partB=(myValue)=>{
     return myValue;
 }

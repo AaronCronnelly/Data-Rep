@@ -5,30 +5,13 @@
     const ages = [25, 31, 42, 77];
  */
 
-const ages = [25, 31, 42, 77];
-
-partD=(mult) => {
-    let a=ages[0];
-    let b=ages[1];
-    let c=ages[2];
-    let d=ages[3];
-
-    if(a<70)
-    {
-        console.log(a*2);
+const myarray = [25, 31, 42, 70];
+const age = myarray.map((element) => {
+    if (element < 70) {
+        return element * 2;
     }
-    if(b<70)
-    {
-        console.log(b*2);
+    else{
+        return element;
     }
-    if(c<70)
-    {
-        console.log(c*2);
-    }
-    if(d<70)
-    {
-        console.log(d*2);
-    }
-}
-
-partD();
+})
+console.log(age);

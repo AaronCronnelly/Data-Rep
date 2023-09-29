@@ -1,6 +1,6 @@
-
-partC=(a,b)=>{
-    return a+b;
+//arrow function 
+partC = (a, b) => {
+    return a + b;
 }
-
-console.log(partC(2,3));
+//calling and displaying funciton in one
+console.log(partC(2, 3));

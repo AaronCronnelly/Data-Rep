@@ -1,5 +1,4 @@
-const part1=(myvalue)=>{
+const partA=()=>{
     console.log("Data Repasentation and Quaring");
-
 }
-part1();
+partA();

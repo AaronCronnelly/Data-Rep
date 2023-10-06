@@ -1,4 +1,4 @@
-export function Content() {
+function Content() {
     return (
         <div>
             <h1>Hello World</h1>
@@ -6,3 +6,5 @@ export function Content() {
         </div>
     );
 }
+
+export default Content;

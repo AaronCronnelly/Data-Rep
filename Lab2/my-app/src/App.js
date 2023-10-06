@@ -1,13 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-       <h1>Hello World</h1>
-
-       <h2>It is {new Date().toLocaleTimeString()}.</h2>
+      <header
+        className="App-header">
+        <Header></Header>
+        <Content></Content>
       </header>
     </div>
   );

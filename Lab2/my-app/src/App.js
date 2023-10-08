@@ -26,7 +26,9 @@ function App() {
       
 
       <Routes>
-        <Route path="/" element={<Content></Content>}></Route>
+        <Route path='/' element={<Content></Content>}></Route>
+        <Route path='/Content' element={<Header></Header>}></Route>
+        <Route path='/Footer' element={<Footer></Footer>}></Route>
       </Routes>
 
         {/* <Header></Header>

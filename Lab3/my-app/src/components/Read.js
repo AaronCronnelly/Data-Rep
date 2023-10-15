@@ -1,6 +1,9 @@
+// Import the 'Books' component from the "./books" module.
 import Books from "./books";
 
+// This is a functional component named 'Read' used for displaying a list of books.
 function Read() {
+    // An array of book data containing information about different books.
     const data = [
         {
             "title": "Learn Git in a Month of Lunches",
@@ -36,12 +39,14 @@ function Read() {
             "categories": []
         }
     ];
+
     return (
         <div>
+            {/* Render the 'Books' component, passing the book data as 'myBooks' prop. */}
             <Books myBooks={data}></Books>
         </div>
     );
 }
 
-
+// Export the 'Read' component for use in other parts of the application.
 export default Read;

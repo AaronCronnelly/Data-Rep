@@ -1,9 +1,13 @@
 // Import necessary Bootstrap components and CSS.
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+
+// import Container from 'react-bootstrap/Container';
+// import Nav from 'react-bootstrap/Nav';
+// import Navbar from 'react-bootstrap/Navbar';
+// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 
 // Import custom components.
 import Create from './components/Create';

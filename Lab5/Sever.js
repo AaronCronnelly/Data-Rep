@@ -84,7 +84,7 @@ app.get('/name', (req, res) => {
 })
 
 app.post('/name', (req, res)=>{
-    res.send("Hello "+req.query.fname+" "+req.query.sName)
+    res.send("Hello "+req.body.fname+" "+req.body.sName)
 })
 
 // Define a route for the '/Ted' URL (http://localhost:4000/Ted)

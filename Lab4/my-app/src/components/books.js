@@ -6,7 +6,7 @@ function Books(props) {
     // Map over the 'myBooks' prop and render a 'BookItems' component for each book in the list.
     return props.myBooks.map(
         (book) => {
-            return <BookItems myBook={book}></BookItems>;
+            return <BookItems myBooks={book} key={book.id} />;
         }
     );
 }

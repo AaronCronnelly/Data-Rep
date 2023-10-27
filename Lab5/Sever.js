@@ -1,21 +1,29 @@
+// Import the Express framework
 const express = require('express')
+
+// Create an Express application
 const app = express()
+
+// Set the port number for the server
 const port = 4000
 
+// Define a route for the root URL (http://localhost:4000/)
 app.get('/', (req, res) => {
-    res.send('Welcomme to Data Rep')
+    res.send('Welcome to Data Rep') // Send a response with a welcome message
 })
 
-app.get('/whatever',(req, res)=> { //('/whatever',(req, res) what ever is in the '' is being used for following behind the localhost/
-    res.send('GoodBye')
+// Define a route for the '/whatever' URL (http://localhost:4000/whatever)
+app.get('/whatever', (req, res) => {
+    res.send('Goodbye') // Send a response with a goodbye message
 })
 
-
-app.get('/Hello/:name', (req, res)=>{
-    console.log(req.params.name);
-    res.send("Hello "+req.params.name)
+// Define a dynamic route with a parameter named 'name'
+app.get('/Hello/:name', (req, res) => {
+    console.log(req.params.name); // Log the 'name' parameter to the console
+    res.send("Hello " + req.params.name) // Send a response with a personalized greeting
 })
 
+// Define a route for '/api/books' URL (http://localhost:4000/api/books)
 app.get('/api/books', (req, res)=>{
     const data={
         "books":[
@@ -57,17 +65,19 @@ app.get('/api/books', (req, res)=>{
         }
         ]
         }
-    res.status(200).json({
-        myBooks:data,
-        "message":"Hello from the server"
-    });
+      // Send a JSON response with book data and a message
+      res.status(200).json({
+        myBooks: data,
+        "message": "Hello from the server"
+    })
 })
 
-
-app.get('/Ted', (req, res)=>{
-    res.send("Hello Ted")
+// Define a route for the '/Ted' URL (http://localhost:4000/Ted)
+app.get('/Ted', (req, res) => {
+    res.send("Hello Ted") // Send a response with a greeting to Ted
 })
 
+// Start the server and listen on the specified port
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+    console.log(`Example app listening on port ${port}`) // Log a message when the server starts
 })

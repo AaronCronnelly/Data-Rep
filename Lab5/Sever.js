@@ -6,7 +6,7 @@ const app = express()
 
 // Set the port number for the server
 const port = 4000
-
+const path=require('path')
 // Define a route for the root URL (http://localhost:4000/)
 app.get('/', (req, res) => {
     res.send('Welcome to Data Rep') // Send a response with a welcome message
@@ -24,58 +24,63 @@ app.get('/Hello/:name', (req, res) => {
 })
 
 // Define a route for '/api/books' URL (http://localhost:4000/api/books)
-app.get('/api/books', (req, res)=>{
-    const data={
-        "books":[
-        {
-        "title": "Learn Git in a Month of Lunches",
-        "isbn": "1617292419",
-        "pageCount": 0,
-        "thumbnailUrl":
-        "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/umali.jpg",
-        "status": "MEAP",
-        "authors": ["Rick Umali"],
-        "categories": []
-        },
-        {
-        "title": "MongoDB in Action, Second Edition",
-        "isbn": "1617291609",
-        "pageCount": 0,
-        "thumbnailUrl":
-        "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/banker2.jpg",
-        "status": "MEAP",
-        "authors": [
-        "Kyle Banker",
-        "Peter Bakkum",
-        "Tim Hawkins",
-        "Shaun Verch",
-        "Douglas Garrett"
-        ],
-        "categories": []
-        },
-        {
-        "title": "Getting MEAN with Mongo, Express, Angular, and Node",
-        "isbn": "1617292036",
-        "pageCount": 0,
-        "thumbnailUrl":
-        "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/sholmes.jpg",
-        "status": "MEAP",
-        "authors": ["Simon Holmes"],
-        "categories": []
-        }
+app.get('/api/books', (req, res) => {
+    const data = {
+        "books": [
+            {
+                "title": "Learn Git in a Month of Lunches",
+                "isbn": "1617292419",
+                "pageCount": 0,
+                "thumbnailUrl":
+                    "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/umali.jpg",
+                "status": "MEAP",
+                "authors": ["Rick Umali"],
+                "categories": []
+            },
+            {
+                "title": "MongoDB in Action, Second Edition",
+                "isbn": "1617291609",
+                "pageCount": 0,
+                "thumbnailUrl":
+                    "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/banker2.jpg",
+                "status": "MEAP",
+                "authors": [
+                    "Kyle Banker",
+                    "Peter Bakkum",
+                    "Tim Hawkins",
+                    "Shaun Verch",
+                    "Douglas Garrett"
+                ],
+                "categories": []
+            },
+            {
+                "title": "Getting MEAN with Mongo, Express, Angular, and Node",
+                "isbn": "1617292036",
+                "pageCount": 0,
+                "thumbnailUrl":
+                    "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/sholmes.jpg",
+                "status": "MEAP",
+                "authors": ["Simon Holmes"],
+                "categories": []
+            }
         ]
-        }
-      // Send a JSON response with book data and a message
-      res.status(200).json({
+    }
+    // Send a JSON response with book data and a message
+    res.status(200).json({
         myBooks: data,
         "message": "Hello from the server"
     })
+})
+
+app.get('/webPage', (req, res) => {
+    res.sendFile(__dirname+'/index.html');
 })
 
 // Define a route for the '/Ted' URL (http://localhost:4000/Ted)
 app.get('/Ted', (req, res) => {
     res.send("Hello Ted") // Send a response with a greeting to Ted
 })
+
 
 // Start the server and listen on the specified port
 app.listen(port, () => {

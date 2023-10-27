@@ -7,6 +7,9 @@ const app = express()
 // Set the port number for the server
 const port = 4000
 const path=require('path')
+const bodyParser=require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 // Define a route for the root URL (http://localhost:4000/)
 app.get('/', (req, res) => {
     res.send('Welcome to Data Rep') // Send a response with a welcome message
@@ -74,6 +77,14 @@ app.get('/api/books', (req, res) => {
 
 app.get('/webPage', (req, res) => {
     res.sendFile(__dirname+'/index.html');
+})
+
+app.get('/name', (req, res) => {
+    res.send("Hello "+req.query.fname+ " "+req.query.sName)
+})
+
+app.post('/name', (req, res)=>{
+    res.send("Hello "+req.query.fname+" "+req.query.sName)
 })
 
 // Define a route for the '/Ted' URL (http://localhost:4000/Ted)

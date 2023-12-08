@@ -3,6 +3,9 @@ const app = express()
 const port = 4000
 const cors = require('cors');
 
+const path = require('path');
+app.use(express.static(path.join(__dirname, '../build')));
+app.use('/static', express.static(path.join(__dirname, 'build//static')));
 
 app.use(cors());
 app.use(function(req, res, next) {
@@ -26,7 +29,7 @@ const mongoose = require('mongoose');
 main().catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect('mongodb+srv://admin:admin@martinscluster.w5rtkz0.mongodb.net/DB14?retryWrites=true&w=majority');
+  await mongoose.connect('mongodb+srv://JohnDoe:JohnDoe@cluster0.g3xygxt.mongodb.net/?retryWrites=true&w=majority');
 
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
@@ -84,6 +87,10 @@ app.get('/api/book/:identifier',async (req,res)=>{
   let book = await bookModel.findById(req.params.identifier);
   res.send(book);
 })
+
+app.get('*', (req,res) =>{
+  res.sendFile(path.join(__dirname+'/../build/index.html'));
+  });
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
